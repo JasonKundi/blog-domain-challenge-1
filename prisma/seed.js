@@ -66,13 +66,12 @@ async function seed() {
         },
         post: {
           connect: {
-            id: createdPost.id
-          }
-        }
-      }
-
-    }
-  })
+            id: createdPost2.id,
+          },
+        },
+      },
+    },
+  });
 
   console.log(`users created`, createdUser);
   console.log(`users created`, createdUser2);

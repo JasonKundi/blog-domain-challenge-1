@@ -8,7 +8,7 @@ generator client {
 datasource db {
   provider          = "postgresql"
   url               = env("DATABASE_URL")
-  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+ // shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
 model User {
@@ -18,8 +18,8 @@ model User {
   profile   Profile?
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
-  Post      Post[]
-  Comment   Comment[]
+  post      Post[]
+  comment   Comment[]
 }
 
 model Profile {
@@ -43,7 +43,7 @@ model Post {
   pictureUrl String?
   user       User      @relation(fields: [userId], references: [id])
   userId     Int
-  Comment    Comment[]
+  comment    Comment[]
 }
 
 model Comment {
